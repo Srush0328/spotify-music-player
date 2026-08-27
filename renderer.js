@@ -1,16 +1,55 @@
-console.log("Spotify Dashboard Loaded");
-
-const song = document.getElementById("song");
-const artist = document.getElementById("artist");
-const statusText = document.getElementById("status-text");
-
-song.textContent = "Spotify Dashboard";
-artist.textContent = "Waiting for Spotify...";
-statusText.textContent = "App is running";
-
 const closeButton =
     document.getElementById("close-button");
 
-closeButton.addEventListener("click", () => {
-    window.electronAPI.closeWindow();
-});
+
+// Close button
+if (closeButton) {
+
+    closeButton.addEventListener(
+        "click",
+        () => {
+
+            window.electronAPI.closeWindow();
+
+        }
+    );
+
+}
+
+
+// Spotify / Windows media information
+window.electronAPI.onMediaUpdate(
+    (data) => {
+
+        console.log(
+            "MEDIA UPDATE:",
+            data
+        );
+
+        if (data.type !== "media") {
+            return;
+        }
+
+        const song =
+            document.getElementById("song");
+
+        const artist =
+            document.getElementById("artist");
+
+        if (song) {
+            song.textContent =
+                data.title || "Unknown song";
+        }
+
+        if (artist) {
+            artist.textContent =
+                data.artist || "Unknown artist";
+        }
+
+    }
+);
+
+
+console.log(
+    "Spotify widget loaded"
+);

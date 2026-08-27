@@ -16,37 +16,66 @@
 
 <body>
 
+    <!-- Draggable header -->
     <header class="widget-header">
-        <span class="drag-area">Spotify</span>
 
-        <button id="close-button">×</button>
+        <span class="drag-area">
+            SPOTIFY
+        </span>
+
+        <button
+            id="close-button"
+            aria-label="Close widget"
+        >
+            ×
+        </button>
+
     </header>
 
+
+    <!-- Main widget -->
     <main class="container">
 
-        <p class="label">NOW PLAYING</p>
+        <p class="label">
+            NOW PLAYING
+        </p>
 
+
+        <!-- Album artwork -->
         <div class="album-container">
+
             <div class="album-placeholder">
                 🎵
             </div>
+
         </div>
 
-        <h1 id="song">Not playing</h1>
+
+        <!-- Song information -->
+        <h1 id="song">
+            Not playing
+        </h1>
 
         <p id="artist">
             Open Spotify and play something
         </p>
 
+
+        <!-- Playback status -->
         <div class="status">
+
             <span class="dot"></span>
+
             <span id="status-text">
                 Waiting for Spotify
             </span>
+
         </div>
 
     </main>
 
+
+    <!-- Renderer JavaScript -->
     <script src="renderer.js"></script>
 
 </body>
