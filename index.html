@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Spotify Dashboard</title>
+    <title>Spotify Widget</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+    <header class="widget-header">
+        <span class="drag-area">Spotify</span>
+
+        <button id="close-button">×</button>
+    </header>
 
     <main class="container">
 
@@ -26,11 +34,15 @@
 
         <h1 id="song">Not playing</h1>
 
-        <p id="artist">Open Spotify and play something</p>
+        <p id="artist">
+            Open Spotify and play something
+        </p>
 
         <div class="status">
             <span class="dot"></span>
-            <span id="status-text">Waiting for Spotify</span>
+            <span id="status-text">
+                Waiting for Spotify
+            </span>
         </div>
 
     </main>
@@ -38,4 +50,5 @@
     <script src="renderer.js"></script>
 
 </body>
+
 </html>
